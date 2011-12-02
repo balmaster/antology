@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+
+<project name="run_ant_with_cmd_line_args" default="run">
+	<target name="run">
+	        <property name="property1" value=""/>
+	        <property name="property2" value="\\server\c$\value1/test/werwer"/>
+	        <propertyfile file="run.properties">
+	        	<entry key="property1" value="${property1}"/>
+	        	<entry key="property2" value="${property2}"/>
+	        </propertyfile>
+	        <property name="line" value=" -f test.xml  -propertyfile run.properties"/>
+		<exec executable="cmd.exe">
+			<arg line="/c ant.bat ${line}"/>
+		</exec>
+	</target>
+</project>
