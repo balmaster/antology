@@ -3,7 +3,7 @@
 <project name="run_ant_with_cmd_line_args" default="run">
 	<target name="run">
 	        <property name="property1" value=""/>
-	        <property name="property2" value="\\server\c$\value1/test/werwer"/>
+	        <property name="property2" value="\\server\c$\va lue1/test/werwer"/>
 	        <propertyfile file="run.properties">
 	        	<entry key="property1" value="${property1}"/>
 	        	<entry key="property2" value="${property2}"/>
