@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<project name="closure">
+
+	<macrodef name="test">
+	<attribute name="a1"/>
+	<sequential>
+		<local name="a1"/>
+		<property name="a1" value="@{a1}"/>
+
+	        <test2>
+	        	<code>
+		        	<echo message="@{a1}"/>
+	        		<echo message="${a1}"/>
+	        		<echo message="${p1}"/>
+	        	</code>
+	        </test2>
+	</sequential>
+	</macrodef>
+
+	<macrodef name="test2">
+	<element name="code"/>
+	<sequential>
+		<local name="p1"/>
+		<property name="p1" value="v2"/>
+
+		<code/>
+	</sequential>
+	</macrodef>
+
+	<target name="test">
+	<sequential>
+		<local name="p1"/>
+		<property name="p1" value="v1"/>
+		<test a1="av1"/>
+	</sequential>	
+	</target>
+</project>
