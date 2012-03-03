@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<project name="local">
+
+	<macrodef name="test">
+	<sequential>
+		<echo message="${p1}"/>
+	</sequential>
+	</macrodef>
+
+	<target name="test">
+	<sequential>
+		<local name="p1"/>
+		<property name="p1" value="v1"/>
+		<test/>
+	</sequential>	
+	</target>
+</project>
